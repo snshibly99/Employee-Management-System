@@ -18,7 +18,7 @@ const adminSchema = new mongoose.Schema({
 const Admin = mongoose.model("Admin", adminSchema);
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("signup.ejs");
 });
 
 mongoose.connect(db)
@@ -55,7 +55,7 @@ app.post("/register", async (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-    res.render("index_login.ejs");
+    res.render("login.ejs");
 });
 
 app.post("/login", async (req, res) => {
