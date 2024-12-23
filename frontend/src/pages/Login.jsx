@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:9999/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         { email, password }
       );
       if(response.data.success) {
@@ -42,7 +42,7 @@ const Login = () => {
     bg-gradient-to-b from-[#27374D] from-50% to-[#DDE6ED] to-50% space-y-6"
     >
       <h2 className="font-nyala text-5xl text-white">
-        EMS
+        AdminAxis
       </h2>
       <div className="border shadow p-6 w-80 bg-[#9DB2BF]">
         <h2 className="text-2xl font-bold mb-4">Login</h2>

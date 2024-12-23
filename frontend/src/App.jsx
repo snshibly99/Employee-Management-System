@@ -20,6 +20,11 @@ import AddLeave from './components/leave/Add'
 import Setting from "./components/EmployeeDashboard/Setting";
 import Table from "./components/leave/Table";
 import Detail from "./components/leave/Detail";
+import Announcement from "./components/announcement/AnnouncementList";
+import AnnouncementForm from "./components/announcement/AnnouncementForm";
+
+
+
 
 function App() {
   return (
@@ -39,10 +44,25 @@ function App() {
         >
           <Route index element={<AdminSummary />}></Route>
 
+
           <Route
             path="/admin-dashboard/departments"
             element={<DepartmentList />}
           ></Route>
+
+
+          <Route
+            path="/admin-dashboard/announcement"
+            element={<Announcement />}
+          ></Route>
+
+          
+
+          <Route
+            path="/admin-dashboard/add-announcement"
+            element={<AnnouncementForm />}
+          ></Route>
+
           <Route
             path="/admin-dashboard/add-department"
             element={<AddDepartment />}
@@ -88,6 +108,11 @@ function App() {
           }
         >
           <Route index element={<Summary />}></Route>
+
+          <Route
+            path="/employee-dashboard/announcement"
+            element={<Announcement />}
+          ></Route>
 
           <Route path="/employee-dashboard/profile/:id" element={<View />}></Route>
           <Route path="/employee-dashboard/leaves/:id" element={<LeaveList />}></Route>

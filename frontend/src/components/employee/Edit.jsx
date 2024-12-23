@@ -65,7 +65,7 @@ const Edit = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:9999/api/employee/${id}`,
+        `http://localhost:5000/api/employee/${id}`,
         employee,
         {
           headers: {

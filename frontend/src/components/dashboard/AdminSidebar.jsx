@@ -7,6 +7,7 @@ import {
   FaMoneyBillWave,
   FaTachometerAlt,
   FaUsers,
+  FaBullhorn,
 } from "react-icons/fa";
 
 const AdminSidebar = () => {
@@ -28,6 +29,20 @@ const AdminSidebar = () => {
           <FaTachometerAlt />
           <span>Dashboard</span>
         </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/announcement"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaBullhorn />
+          <span>Announcement</span>
+        </NavLink>
+
+
         <NavLink
           to="/admin-dashboard/employees"
           className={({ isActive }) =>
