@@ -7,6 +7,7 @@ import salaryRouter from './routes/salary.js'
 import leaveRouter from './routes/leave.js' 
 import settingRouter from './routes/setting.js'
 import dashboardRouter from './routes/dashboard.js'
+import noteRouter from './routes/note.js'
 import connectToDatabase from './db/db.js'
 
 connectToDatabase() 
@@ -21,6 +22,7 @@ app.use('/api/salary', salaryRouter)
 app.use('/api/leave', leaveRouter)
 app.use('/api/setting', settingRouter)
 app.use('/api/dashboard', dashboardRouter)
+app.use('/api/note', noteRouter)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is Running on port ${process.env.PORT}`)

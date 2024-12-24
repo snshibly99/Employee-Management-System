@@ -7,6 +7,7 @@ import {
   FaMoneyBillWave,
   FaTachometerAlt,
   FaUsers,
+  FaStickyNote,
 } from "react-icons/fa";
 
 const AdminSidebar = () => {
@@ -71,6 +72,17 @@ const AdminSidebar = () => {
         >
           <FaMoneyBillWave />
           <span>Salary</span>
+        </NavLink>
+        <NavLink
+          to="/admin-dashboard/notes"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaStickyNote />
+          <span>Notes</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/setting"
