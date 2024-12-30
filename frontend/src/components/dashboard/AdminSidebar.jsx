@@ -8,6 +8,8 @@ import {
   FaTachometerAlt,
   FaUsers,
   FaBullhorn,
+  FaCalendarCheck,
+  FaMedal,
 } from "react-icons/fa";
 
 const AdminSidebar = () => {
@@ -40,6 +42,18 @@ const AdminSidebar = () => {
         >
           <FaBullhorn />
           <span>Announcement</span>
+        </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/attendance"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaCalendarCheck />
+          <span>Attendance</span>
         </NavLink>
 
 
@@ -76,6 +90,19 @@ const AdminSidebar = () => {
           <FaCalendarAlt />
           <span>Leave</span>
         </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/performance"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaMedal />
+          <span>Performance Notes</span>
+        </NavLink>
+
         <NavLink
           to="/admin-dashboard/salary/add"
           className={({ isActive }) =>

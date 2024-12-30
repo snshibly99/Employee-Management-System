@@ -17,7 +17,7 @@ const AnnouncementForm = ({ addAnnouncement }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/announcements",
+        "http://localhost:9999/api/announcements",
         data,
         {
           headers: {
@@ -41,19 +41,19 @@ const AnnouncementForm = ({ addAnnouncement }) => {
       onSubmit={handleSubmit} // Use onSubmit for form submission
       className="bg-white p-6 rounded-lg shadow-md space-y-4"
     >
-      <h2 className="text-xl font-semibold text-gray-800">
+      <h2 className="text-xl font-bold text-gray-800">
         Create Announcement
       </h2>
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Announcement Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-400"
         required
       />
       <textarea
-        placeholder="Content"
+        placeholder="Type here..."
         value={content}
         onChange={(e) => setContent(e.target.value)}
         className="w-full border border-gray-300 rounded-md p-2 h-32 focus:ring-2 focus:ring-blue-400"
@@ -61,7 +61,7 @@ const AnnouncementForm = ({ addAnnouncement }) => {
       ></textarea>
       <button
         type="submit" // Keep the type as submit
-        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        className="bg-[#526D82] text-white px-4 py-2 rounded-md hover:bg-[#27374D]"
       >
         Post Announcement
       </button>

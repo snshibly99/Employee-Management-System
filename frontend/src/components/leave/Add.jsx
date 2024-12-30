@@ -22,7 +22,7 @@ const Add = () => {
 
     try {
         const response = await axios.post(
-          `http://localhost:5000/api/leave/add`,leave,
+          `http://localhost:9999/api/leave/add`,leave,
           {
             headers: {
               "Authorization": `Bearer ${localStorage.getItem("token")}`,

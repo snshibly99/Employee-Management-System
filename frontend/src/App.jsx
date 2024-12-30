@@ -22,6 +22,9 @@ import Table from "./components/leave/Table";
 import Detail from "./components/leave/Detail";
 import Announcement from "./components/announcement/AnnouncementList";
 import AnnouncementForm from "./components/announcement/AnnouncementForm";
+import AttendanceList from "./components/attendance/Attendance";
+
+
 
 
 
@@ -50,23 +53,28 @@ function App() {
             element={<DepartmentList />}
           ></Route>
 
+          <Route
+            path="/admin-dashboard/attendance"
+            element={<AttendanceList />}
+          ></Route>
+
 
           <Route
             path="/admin-dashboard/announcement"
             element={<Announcement />}
           ></Route>
 
-          
-
           <Route
             path="/admin-dashboard/add-announcement"
             element={<AnnouncementForm />}
           ></Route>
 
+
           <Route
             path="/admin-dashboard/add-department"
             element={<AddDepartment />}
           ></Route>
+
           <Route
             path="/admin-dashboard/department/:id"
             element={<EditDepartment />}

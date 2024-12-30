@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema({
     profileImage: {type: String},
     createAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
+    attendance: { type: Number, default: 0 },
+    lastLoginDate: { type: Date },
 })
 
 const User = mongoose.model("User", userSchema)

@@ -15,6 +15,16 @@ const login = async (req, res) => {
       return res.status(404).json({ success: false, error: "Wrong Password" });
     }
 
+    const today = new Date();
+    const lastLoginDate = user.lastLoginDate;
+
+    if (!lastLoginDate || lastLoginDate.toDateString() !== today.toDateString()) {
+        user.attendance += 1;
+        user.lastLoginDate = today;
+       await user.save();
+    } 
+
+
     const token = jwt.sign(
       { _id: user._id, role: user.role },
       process.env.JWT_KEY,
@@ -37,4 +47,17 @@ const verify = (req, res) =>{
     return res.status(200).json({success: true, user: req.user})
 }
 
-export { login, verify };
+
+// Get all users
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.find()
+    return res.status(200).json({ success: true, users });
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+
+
+export { login, verify, getUsers };

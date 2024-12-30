@@ -38,7 +38,7 @@ const Add = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/salary/add`,
+        `http://localhost:9999/api/salary/add`,
         salary,
         {
           headers: {

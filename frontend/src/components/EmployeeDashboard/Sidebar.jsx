@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <div className="bg-gray-800 text-[#27374D] h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
       <div className="bg-[#526D82] h-12 flex items-center justify-center">
-        <h3 className="text-2xl text-center font-nyala">AdminAxis</h3>
+        <h3 className="text-2xl text-center font-nyala">EMS</h3>
       </div>
       <div className="px-4">
         <NavLink
@@ -43,6 +43,9 @@ const Sidebar = () => {
           <FaBullhorn />
           <span>Announcement</span>
         </NavLink>
+
+
+
 
 
         <NavLink
