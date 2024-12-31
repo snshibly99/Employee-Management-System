@@ -8,6 +8,8 @@ import leaveRouter from './routes/leave.js'
 import settingRouter from './routes/setting.js'
 import dashboardRouter from './routes/dashboard.js'
 import connectToDatabase from './db/db.js'
+import documentRoutes from "./routes/document.js";
+
 
 connectToDatabase() 
 const app = express() 
@@ -21,6 +23,11 @@ app.use('/api/salary', salaryRouter)
 app.use('/api/leave', leaveRouter)
 app.use('/api/setting', settingRouter)
 app.use('/api/dashboard', dashboardRouter)
+<<<<<<< Updated upstream
+=======
+app.use('/api/note', noteRouter)
+app.use("/api/documents", documentRoutes);
+>>>>>>> Stashed changes
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is Running on port ${process.env.PORT}`)

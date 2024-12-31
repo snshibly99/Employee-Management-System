@@ -64,6 +64,17 @@ const Sidebar = () => {
           <span>Salary</span>
         </NavLink>
         <NavLink
+          to={`/employee-dashboard/file_upload/${user._id}`}
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]": " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaCalendarAlt />
+          <span>Upload files</span>
+        </NavLink>
+        <NavLink
           to="/employee-dashboard/setting"
           className={({ isActive }) =>
             `${

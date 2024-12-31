@@ -73,6 +73,21 @@ const AdminSidebar = () => {
           <span>Salary</span>
         </NavLink>
         <NavLink
+<<<<<<< Updated upstream
+=======
+          to="/admin-dashboard/notes"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaStickyNote />
+          <span>Notes</span>
+        </NavLink>
+        
+        <NavLink
+>>>>>>> Stashed changes
           to="/admin-dashboard/setting"
           className="flex items-center space-x-4 block py-2.5 px-4 rounded"
         >
