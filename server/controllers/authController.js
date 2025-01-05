@@ -64,10 +64,6 @@ const verify = (req, res) =>{
     return res.status(200).json({success: true, user: req.user})
 }
 
-<<<<<<< Updated upstream
-export { login, verify };
-=======
-
 // Get all users
 const getUsers = async (req, res) => {
   try {
@@ -81,4 +77,3 @@ const getUsers = async (req, res) => {
 
 
 export { login, verify, getUsers, logout };
->>>>>>> Stashed changes
