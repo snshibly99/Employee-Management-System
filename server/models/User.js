@@ -8,6 +8,12 @@ const userSchema = new mongoose.Schema({
     profileImage: {type: String},
     createAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
+<<<<<<< Updated upstream
+=======
+    attendance: { type: Number, default: 0 },
+    lastLoginDate: { type: Date },
+    status: { type: String, enum: ["online", "offline"], default: "offline" },
+>>>>>>> Stashed changes
 })
 
 const User = mongoose.model("User", userSchema)

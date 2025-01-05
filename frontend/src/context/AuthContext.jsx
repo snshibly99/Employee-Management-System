@@ -25,7 +25,7 @@ const authContext = ({ children }) => {
           }
         } else {
           setUser(null);
-          setLoading(false)
+          setLoading(false);
         }
       } catch (error) {
         if (error.response && !error.response.data.error) {
@@ -42,10 +42,30 @@ const authContext = ({ children }) => {
     setUser(user);
   };
 
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem("token");
+  const logout = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
+        // Send a logout request to the API
+        await axios.post(
+          "http://localhost:9999/api/auth/logout",
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+      }
+
+      // Clear user state and localStorage
+      setUser(null);
+      localStorage.removeItem("token");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
   };
+
   return (
     <userContext.Provider value={{ user, login, logout, loading }}>
       {children}
