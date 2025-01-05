@@ -15,8 +15,6 @@ const login = async (req, res) => {
       return res.status(404).json({ success: false, error: "Wrong Password" });
     }
 
-<<<<<<< Updated upstream
-=======
     const today = new Date();
     const lastLoginDate = user.lastLoginDate;
 
@@ -28,7 +26,6 @@ const login = async (req, res) => {
     await user.save();
 
 
->>>>>>> Stashed changes
     const token = jwt.sign(
       { _id: user._id, role: user.role },
       process.env.JWT_KEY,
