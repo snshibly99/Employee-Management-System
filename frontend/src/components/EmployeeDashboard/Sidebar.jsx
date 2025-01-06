@@ -72,7 +72,7 @@ const Sidebar = () => {
           <span>Leaves</span>
         </NavLink>
         <NavLink
-          to={`/employee-dashboard/performance/${user._id}`}
+          to={`/employee-dashboard/performance`}
           className={({ isActive }) =>
             `${
               isActive ? "bg-[#9DB2BF]" : " "
