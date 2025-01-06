@@ -7,7 +7,9 @@ import {
   FaMoneyBillWave,
   FaTachometerAlt,
   FaUsers,
-  FaStickyNote,
+  FaBullhorn,
+  FaCalendarCheck,
+  FaMedal,
 } from "react-icons/fa";
 
 const AdminSidebar = () => {
@@ -29,6 +31,32 @@ const AdminSidebar = () => {
           <FaTachometerAlt />
           <span>Dashboard</span>
         </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/announcement"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaBullhorn />
+          <span>Announcement</span>
+        </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/attendance"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaCalendarCheck />
+          <span>Attendance</span>
+        </NavLink>
+
+
         <NavLink
           to="/admin-dashboard/employees"
           className={({ isActive }) =>
@@ -62,6 +90,19 @@ const AdminSidebar = () => {
           <FaCalendarAlt />
           <span>Leave</span>
         </NavLink>
+
+        <NavLink
+          to="/admin-dashboard/performance"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaMedal />
+          <span>Performance Notes</span>
+        </NavLink>
+
         <NavLink
           to="/admin-dashboard/salary/add"
           className={({ isActive }) =>
@@ -72,17 +113,6 @@ const AdminSidebar = () => {
         >
           <FaMoneyBillWave />
           <span>Salary</span>
-        </NavLink>
-        <NavLink
-          to="/admin-dashboard/notes"
-          className={({ isActive }) =>
-            `${
-              isActive ? "bg-[#9DB2BF]" : " "
-            } flex items-center space-x-4 block py-2.5 px-4 rounded`
-          }
-        >
-          <FaStickyNote />
-          <span>Notes</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/setting"
