@@ -9,6 +9,8 @@ import settingRouter from './routes/setting.js'
 import dashboardRouter from './routes/dashboard.js'
 import connectToDatabase from './db/db.js'
 import announcementRoutes from './routes/announcement.js'
+import performanceRoutes from './routes/performance.js'
+
 
 connectToDatabase() 
 const app = express() 
@@ -18,11 +20,13 @@ app.use(express.static('public/uploads'))
 app.use('/api/auth', authRouter)
 app.use('/api/department', departmentRouter)
 app.use('/api/announcements', announcementRoutes)
+app.use('/api/performances', performanceRoutes)
 app.use('/api/employee', employeeRouter)
 app.use('/api/salary', salaryRouter)
 app.use('/api/leave', leaveRouter)
 app.use('/api/setting', settingRouter)
 app.use('/api/dashboard', dashboardRouter)
+
 
 
 

@@ -73,7 +73,7 @@ const List = () => {
           {leaves.map((leave) => (
             <tr
               key={leave._id}
-              className="bg-[#DDE6ED] border-b dark:bg-gray-800 dark:border-gray-700"
+              className="bg-[#DDE6ED] border-b dark:bg-white dark:border-gray-700"
             >
               <td className="px-6 py-3">{sno++}</td>
               <td className="px-6 py-3">{leave.leaveType}</td>

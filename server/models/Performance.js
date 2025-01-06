@@ -16,13 +16,8 @@ const PerformanceSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    comments: [
-      {
-        type: String,
-      },
-    ],
   },
-  { timestamps: true } 
+  { timestamps: true } // Automatically adds `createdAt` and `updatedAt`
 );
 
 const Performance = mongoose.model("Performance", PerformanceSchema);

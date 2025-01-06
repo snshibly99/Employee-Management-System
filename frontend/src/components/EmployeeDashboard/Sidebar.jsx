@@ -8,13 +8,14 @@ import {
   FaTachometerAlt,
   FaUsers,
   FaBullhorn,
+  FaMedal,
 } from "react-icons/fa";
 import { useAuth } from "../../context/authContext";
 
 const Sidebar = () => {
     const {user} = useAuth()
   return (
-    <div className="bg-gray-800 text-[#27374D] h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
+    <div className="bg-[#27374D] text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
       <div className="bg-[#526D82] h-12 flex items-center justify-center">
         <h3 className="text-2xl text-center font-nyala">EMS</h3>
       </div>
@@ -70,6 +71,18 @@ const Sidebar = () => {
           <FaBuilding />
           <span>Leaves</span>
         </NavLink>
+        <NavLink
+          to={`/employee-dashboard/performance/${user._id}`}
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-[#9DB2BF]" : " "
+            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+          }
+        >
+          <FaMedal />
+          <span>Performance Notes</span>
+        </NavLink>
+        
         <NavLink
           to={`/employee-dashboard/salary/${user._id}`}
           className={({ isActive }) =>

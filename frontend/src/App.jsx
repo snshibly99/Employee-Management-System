@@ -23,6 +23,8 @@ import Detail from "./components/leave/Detail";
 import Announcement from "./components/announcement/AnnouncementList";
 import AnnouncementForm from "./components/announcement/AnnouncementForm";
 import AttendanceList from "./components/attendance/Attendance";
+import Performance from "./components/performance/PerformanceList";
+import PerformanceForm from "./components/performance/PerformanceForm";
 
 
 
@@ -67,6 +69,16 @@ function App() {
           <Route
             path="/admin-dashboard/add-announcement"
             element={<AnnouncementForm />}
+          ></Route>
+
+          <Route
+            path="/admin-dashboard/performance"
+            element={<Performance />}
+          ></Route>
+
+          <Route
+            path="/admin-dashboard/add-performance"
+            element={<PerformanceForm />}
           ></Route>
 
 
@@ -120,6 +132,11 @@ function App() {
           <Route
             path="/employee-dashboard/announcement"
             element={<Announcement />}
+          ></Route>
+
+          <Route
+            path="/employee-dashboard/performance"
+            element={<Performance />}
           ></Route>
 
           <Route path="/employee-dashboard/profile/:id" element={<View />}></Route>
