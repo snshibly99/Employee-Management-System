@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
     updatedAt: {type: Date, default: Date.now},
     attendance: { type: Number, default: 0 },
     lastLoginDate: { type: Date },
+    status: { type: String, enum: ["online", "offline"], default: "offline" },
 })
 
 const User = mongoose.model("User", userSchema)

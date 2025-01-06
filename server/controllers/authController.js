@@ -21,8 +21,9 @@ const login = async (req, res) => {
     if (!lastLoginDate || lastLoginDate.toDateString() !== today.toDateString()) {
         user.attendance += 1;
         user.lastLoginDate = today;
-       await user.save();
     } 
+    user.status = "online";
+    await user.save();
 
 
     const token = jwt.sign(
@@ -36,17 +37,29 @@ const login = async (req, res) => {
       .json({
         success: true, 
         token,
-        user: { _id: user._id, name: user.name, role: user.role },
+        user: { _id: user._id, name: user.name, role: user.role, status: user.status, attendance: user.attendance },
       });
   } catch (error) {
     res.status(500).json({success: false, error: error.message})
   }
 };
 
+const logout = async (req, res) => {
+  try {
+    const user = req.user;
+    user.status = "offline";
+    await user.save();
+
+    return res.status(200).json({ success: true, message: "User logged out successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+
 const verify = (req, res) =>{
     return res.status(200).json({success: true, user: req.user})
 }
-
 
 // Get all users
 const getUsers = async (req, res) => {
@@ -60,4 +73,4 @@ const getUsers = async (req, res) => {
 
 
 
-export { login, verify, getUsers };
+export { login, verify, getUsers, logout };
